@@ -7,12 +7,12 @@ no server. Powered by the free [OpenWeatherMap Air Pollution API](https://openwe
 
 ## Features
 
-- 🔍 Search any city, or use one-tap browser geolocation
-- 🎯 Live AQI on OpenWeatherMap's 1–5 scale, with a color-coded "atmosphere column" gauge
-- 🩺 Health advisory tailored to the current AQI band (exercise, masks, sensitive groups, windows)
-- 🧪 Full pollutant breakdown: PM2.5, PM10, O₃, NO₂, SO₂, CO, NH₃, NO
-- 📈 48-hour forecast strip so you can plan around bad-air windows
-- 🔑 Your API key stays in your own browser's `localStorage` — never sent anywhere but OpenWeatherMap
+- Search any city, or use one-tap browser geolocation
+- Live AQI on OpenWeatherMap's 1–5 scale, with a color-coded "atmosphere column" gauge
+- Health advisory tailored to the current AQI band (exercise, masks, sensitive groups, windows)
+- Full pollutant breakdown: PM2.5, PM10, O₃, NO₂, SO₂, CO, NH₃, NO
+- 48-hour forecast strip so you can plan around bad-air windows
+- Your API key stays in your own browser's `localStorage` — never sent anywhere but OpenWeatherMap
 
 ## Getting started
 
