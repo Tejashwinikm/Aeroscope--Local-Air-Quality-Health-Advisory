@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aeroscope — Local Air Quality &amp; Health Advisory</title>
+<meta name="description" content="Real-time air quality index and health recommendations for your location, powered by OpenWeatherMap." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="wordmark">
+    <span class="wordmark__dot"></span>
+    AEROSCOPE
+  </div>
+
+  <form class="search" id="search-form">
+    <input
+      type="text"
+      id="city-input"
+      class="search__input"
+      placeholder="Search a city — e.g. Bengaluru, Delhi, Pune, Mumbai"
+      autocomplete="off"
+    />
+    <button type="submit" class="search__btn" aria-label="Search">→</button>
+    <button type="button" class="search__locate" id="locate-btn" title="Use my location">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M12 2v3M12 19v3M2 12h3M19 12h3"></path>
+      </svg>
+      Locate me
+    </button>
+  </form>
+</header>
+
+<main id="app">
+
+  <!-- ============ LOADING ============ -->
+  <section class="state state--loading" id="loading-state" hidden>
+    <div class="pulse-ring"></div>
+    <p>Reading the atmosphere<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+  </section>
+
+  <!-- ============ ERROR ============ -->
+  <section class="state state--error" id="error-state" hidden>
+    <p id="error-message">Something went wrong.</p>
+    <button id="error-retry">Try again</button>
+  </section>
+
+  <!-- ============ MAIN DASHBOARD ============ -->
+  <section class="dashboard" id="dashboard" hidden>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__data">
+        <p class="hero__location" id="loc-name">—</p>
+        <p class="hero__updated" id="updated-at">—</p>
+
+        <p class="hero__category" id="aqi-category">—</p>
+        <div class="hero__index-row">
+          <span class="hero__index" id="aqi-index">–</span>
+          <span class="hero__index-scale">/ 5 OpenWeather scale</span>
+        </div>
+        <p class="hero__summary" id="aqi-summary">—</p>
+      </div>
+
+      <div class="hero__gauge" aria-hidden="true">
+        <div class="atmo-column" id="atmo-column">
+          <div class="atmo-column__band" data-level="5"><span>Very Poor</span></div>
+          <div class="atmo-column__band" data-level="4"><span>Poor</span></div>
+          <div class="atmo-column__band" data-level="3"><span>Moderate</span></div>
+          <div class="atmo-column__band" data-level="2"><span>Fair</span></div>
+          <div class="atmo-column__band" data-level="1"><span>Good</span></div>
+          <div class="atmo-column__marker" id="atmo-marker">
+            <span class="atmo-column__marker-label">You are here</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVISORY -->
+    <section class="advisory" id="advisory">
+      <h3 class="advisory__headline" id="advisory-headline">—</h3>
+      <ul class="advisory__list" id="advisory-list"></ul>
+    </section>
+
+    <!-- POLLUTANTS -->
+    <section class="pollutants">
+      <h3 class="section-title">Pollutant breakdown <span>μg/m³</span></h3>
+      <div class="pollutant-grid" id="pollutant-grid"></div>
+    </section>
+
+    <!-- FORECAST -->
+    <section class="forecast">
+      <h3 class="section-title">Next 48 hours</h3>
+      <div class="forecast-strip" id="forecast-strip"></div>
+    </section>
+
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Data via <a href="https://openweathermap.org/api/air-pollution" target="_blank" rel="noopener">OpenWeatherMap Air Pollution API</a>. AQI reported on OpenWeather's 1–5 scale, not the US EPA 0–500 scale. Not a substitute for medical or official public-health guidance.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
