@@ -5,6 +5,10 @@ and turns it into a plain-English health advisory ("avoid outdoor exercise today
 etc). Built with plain HTML, CSS, and JavaScript — no frameworks, no build step,
 no server. Powered by the free [OpenWeatherMap Air Pollution API](https://openweathermap.org/api/air-pollution).
 
+## 🌐 Live Demo
+ 
+🔗 [https://tejashwinikm.github.io/Aeroscope--Local-Air-Quality-Health-Advisory/](https://tejashwinikm.github.io/Aeroscope--Local-Air-Quality-Health-Advisory/)
+
 ## Features
 
 - Search any city, or use one-tap browser geolocation
@@ -41,7 +45,7 @@ no server. Powered by the free [OpenWeatherMap Air Pollution API](https://openwe
 4. **Paste your API key** into the prompt on first load. It's saved locally so
    you only do this once per browser.
 
-## Project structure
+## 📁 Project structure
 
 ```
 aeroscope/
@@ -82,7 +86,3 @@ browser, it's safe to make this repo public — you're not committing any secret
   keep the strip readable.
 - This is an informational tool, not medical advice — for official guidance,
   always defer to local public health authorities.
-
-## License
-
-MIT — do whatever you'd like with it.
