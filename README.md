@@ -6,8 +6,7 @@ etc). Built with HTML, CSS, and JavaScript — no frameworks, no build step,
 no server. Powered by the free [OpenWeatherMap Air Pollution API](https://openweathermap.org/api/air-pollution).
 
 ## 🌐 Live Demo
- 
-🔗 [https://tejashwinikm.github.io/Aeroscope--Local-Air-Quality-Health-Advisory/](https://tejashwinikm.github.io/Aeroscope--Local-Air-Quality-Health-Advisory/)
+🔗 https://aeroscope-local-air-quality-health.vercel.app
 
 ## Features
 
